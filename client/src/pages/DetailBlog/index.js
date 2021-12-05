@@ -1,6 +1,6 @@
 import React from 'react'
 import { RegisterBg } from '../../assets'
-import { Link } from '../../components'
+import { Gap, Link } from '../../components'
 import { useHistory } from 'react-router-dom'
 import './detailBlog.scss'
 
@@ -15,6 +15,7 @@ const DetailBlog = () => {
             <br></br>
             Phasellus condimentum tortor orci, nec tempus dui tincidunt vel. Curabitur ante est, vestibulum eu eleifend sit amet, venenatis sed mauris. Nulla facilisi. Aenean ultrices posuere turpis quis iaculis. Mauris eu dapibus odio, vitae porttitor erat. Nunc iaculis suscipit nibh, vel semper purus porttitor ac. Nulla faucibus libero at massa scelerisque, sed placerat enim gravida. Duis consectetur, urna a auctor viverra, eros quam efficitur sapien, in aliquet lorem urna at neque. Duis sollicitudin sem ac eleifend laoreet. Nulla volutpat sapien vel metus tincidunt laoreet. Integer rhoncus sapien sit amet lorem elementum pharetra. Fusce vitae porttitor elit.
             </p>
+            <Gap height={20}/>
             <Link title="Kembali Ke Home" onClick={() => history.push()}/> 
         </div>
     )
