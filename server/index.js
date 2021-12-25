@@ -11,7 +11,7 @@ const app = express();
  * port 3000 agar dimanis, masukkan ke variabel PORT.
  */
 const productsRoutes = require('./src/routes/products');
-const PORT = 3000;
+const PORT = 5000;
 /**
  * app.use = express().use.
  * response setHeader utk membolehkan * / utk mengakses semua CORS origin.
