@@ -7,4 +7,5 @@ router.post('/product', productsContoller.createProduct);
 // READ -> GET : localhost:3000/v1/customer/productS
 router.get('/products', productsContoller.getAllProducts);
 
+// jangan lupa export router agar bisa dipakai di index.js
 module.exports = router;
