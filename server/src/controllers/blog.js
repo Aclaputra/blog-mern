@@ -35,4 +35,5 @@ exports.createBlogPost = (req, res, next) => {
     }
     console.log(result);
     res.status(201).json(result);
+    
 }
