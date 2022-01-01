@@ -11,13 +11,21 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
 /**
+ * gunakan mongoose untuk media mengkoneksikan ke Mongodb atlas.
+ * dan juga pembuatan schema/model data di dalam Mongodb.
+ */
+const mongoose = require('mongoose');
+// aktifkan dotenv agar bisa menggunakan process.env
+const dotenv = require('dotenv');
+dotenv.config();
+/**
  * panggil routing products dari file products.js- 
  * & deklarasikan menjadi variabel productsRoutes.
  * port 3000 agar dimanis, masukkan ke variabel PORT.
  */
 const authRoutes = require('./src/routes/auth');
 const blogRoutes = require('./src/routes/blog');
-const PORT = 5000;
+// const PORT = 5000;
 
 app.use(bodyParser.json()); // support json encoded bodies
 /**
@@ -41,7 +49,6 @@ app.use((req, res, next) => {
 // product routes defaultnya di /v1/customer
 app.use('/v1/auth', authRoutes);
 app.use('/v1/blog', blogRoutes);
-
 /**
  * panggil hasil error/err dri blog controller, error.errorStatus, error.data.
  */
@@ -53,7 +60,14 @@ app.use((error, req, res, next) => {
   res.status(status).json({message: message, data: data});
 });
 
-// listen to port 3000, and send message to console
-app.listen(PORT, () => {
-  console.log(`listening on port http://localhost:${PORT}`);
-});
+mongoose.connect(`mongodb+srv://aclaputra:${process.env.PASSWORD}@cluster0.kmmgb.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`)
+.then(() => {
+  // listen to port 5000, and send message to console if success connect to mongodb.
+  app.listen(process.env.PORT, () => {
+    console.log(`listening on port http://localhost:${process.env.PORT}`);
+  });
+})
+.catch(err => {
+  // if error, send error message to console.
+  console.log(err);
+}); 
