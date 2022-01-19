@@ -1,4 +1,4 @@
-# blog-mern-stack
+# blog-mern
 Built Blog app using MERN Stack MongoDB, Express, React JS, Node JS
 
 - learning resource => (0:00/4:17) 33 - Menkoneksi kan server MongoDB ke server Node JS 
