@@ -60,7 +60,7 @@ app.use((error, req, res, next) => {
   res.status(status).json({message: message, data: data});
 });
 
-mongoose.connect(`mongodb+srv://aclaputra:${process.env.PASSWORD}@cluster0.kmmgb.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`)
+mongoose.connect(`mongodb+srv://aclaputra:${process.env.PASSWORD}@cluster0.kmmgb.mongodb.net/blogs?retryWrites=true&w=majority`)
 .then(() => {
   // listen to port 5000, and send message to console if success connect to mongodb.
   app.listen(process.env.PORT, () => {
