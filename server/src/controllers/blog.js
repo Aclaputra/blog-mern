@@ -1,4 +1,5 @@
 const { validationResult } = require('express-validator');
+const BlogPost = require('../models/blog');
 
 exports.createBlogPost = (req, res, next) => {
     const title = req.body.title;
@@ -19,21 +20,27 @@ exports.createBlogPost = (req, res, next) => {
         throw err;
     }
 
-    const result = {
-        message: "Create Blog Post Success",
-        data: {
-            post_id: 1,
-            title: title,
-            image: "imagefile.png",
-            content: content,
-            created_at: date,
-            author: {
-                uid: 1,
-                name: "Testing"
-            }
-        }
-    }
-    console.log(result);
-    res.status(201).json(result);
-    
+    // Posting akan diambil dari model blog yg sudah dibuat pda file models/blog.js
+    const Posting = new BlogPost({
+        title: title,
+        content: content,
+        author: {uid: 1, name: 'Muhammad Acla'}
+    });
+    /**
+     * save variabel Posting ke database.
+     * cek apakah proses berhasil apa gagal menggunakan then dan catch.
+     * jika proses berhasil masuk ke result => dan jalankan proses response json di dalamnya.
+     */
+    Posting.save()
+    .then(result => {
+        res.status(201).json({
+            message: "Create Blog Post Success",
+            // hasil dari promise yang disimpan ke dalam database akan dimasukkan kedalam data: 
+            data: result
+        });
+    })
+    .catch(err => {
+        console.log('err: ', err);
+    });
+
 }
