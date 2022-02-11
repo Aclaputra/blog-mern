@@ -1,4 +1,4 @@
-# blog-mern
+# 🧢— blog-mern
 Built Blog app using M.E.R.N Stack MongoDB, Express, React JS, Node JS
 
 <!-- - learning resource => (0:00/16:00) 34 - Cara Upload Image / Photo di NodeJS 
