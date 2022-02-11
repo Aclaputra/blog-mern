@@ -6,5 +6,6 @@ https://www.youtube.com/watch?v=ewWjphek2d0&list=PLU4DS8KR-LJ0-MT2QfV-fvJiNorsoF
 
 ## Home page.
 ![](readme_img/home.png)
-## Detail Blog page
+
+## Detail Blog page.
 ![](readme_img/detail.png)
