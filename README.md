@@ -7,5 +7,5 @@ https://www.youtube.com/watch?v=ewWjphek2d0&list=PLU4DS8KR-LJ0-MT2QfV-fvJiNorsoF
 ## Tampilan Home page.
 ![](readme_img/home.png)
 
-## Detail Blog page.
+## Tampilan Detail Blog page.
 ![](readme_img/detail.png)
